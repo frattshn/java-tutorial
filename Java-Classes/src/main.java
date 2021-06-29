@@ -1,3 +1,6 @@
+import java.util.Scanner;
+
+import myPack.Student;
 
 public class main {
 	int x=5;
@@ -53,6 +56,18 @@ public class main {
 		class52 newClass2= new class52();
 		newClass2.setYear(2071);
 		System.out.println(newClass2.getYear());
+		
+		System.out.println();
+		
+		Scanner myScanner= new Scanner(System.in);
+		System.out.println("Enter username ");
+		String userName= myScanner.nextLine();
+		System.out.println("Username: "+ userName);
+		
+		System.out.println();
+		
+		Student student= new Student("Fýrat", 27);
+		student.studInfo();
 	}
 
 }
