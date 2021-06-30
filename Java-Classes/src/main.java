@@ -2,6 +2,10 @@ import java.util.Scanner;
 
 import myPack.Student;
 
+import extendedClasses.*;
+
+import polymorphismClasses.*;
+
 public class main {
 	int x=5;
 	
@@ -68,6 +72,23 @@ public class main {
 		
 		Student student= new Student("Fýrat", 27);
 		student.studInfo();
+		
+		System.out.println();
+		
+		Car myCar= new Car();
+		myCar.honk();
+		System.out.println(myCar.brand+" "+myCar.modelName);
+		
+		System.out.println();
+		
+		Animal myAnimal= new Animal();
+		myAnimal.animalSound();
+		
+		Animal myKangal= new Kangal();
+		myKangal.animalSound();
+		
+		Animal myVanCat= new VanCat();
+		myVanCat.animalSound();
 	}
 
 }
