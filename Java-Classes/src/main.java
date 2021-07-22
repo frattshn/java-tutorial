@@ -6,6 +6,33 @@ import extendedClasses.*;
 
 import polymorphismClasses.*;
 
+import innerOuterClasses.*;
+
+import abstractClass.*;
+
+import interfaceClasses.*;
+
+import java.time.LocalTime;
+
+import java.time.LocalDateTime;
+
+import java.time.format.DateTimeFormatter;
+
+
+enum Level{
+	LOW,
+	MEDIUM,
+	HIGH
+}
+
+enum Numbers{
+	One,
+	Two,
+	Three,
+	Four,
+	Five
+}
+
 public class main {
 	int x=5;
 	
@@ -15,6 +42,7 @@ public class main {
 	}
 
 	public static void main(String[] args) {
+		
 		main myObj= new main();
 		System.out.println(myObj.x);
 		System.out.println();
@@ -89,6 +117,86 @@ public class main {
 		
 		Animal myVanCat= new VanCat();
 		myVanCat.animalSound();
+		
+		System.out.println();
+		
+		OuterClass myOuter= new OuterClass();
+		OuterClass.InnerClass myInner= myOuter.new InnerClass();
+		System.out.println(myInner.y + myOuter.x);
+		
+		System.out.println();
+		
+		OuterClass2.InnerClass2 myInner2 = new OuterClass2.InnerClass2();
+		System.out.println(myInner2.y);
+		
+		System.out.println();
+		
+		OuterClass3 myOuter3= new OuterClass3();
+		OuterClass3.InnerClass3 myInner3= myOuter3.new InnerClass3();
+		System.out.println(myInner3.myInnerMethod());
+		
+		System.out.println();
+		
+		Dog myDog = new Dog();
+		myDog.animalSound();
+		myDog.sleep();
+		
+		System.out.println();
+		
+		Man myMan= new Man();
+		myMan.PersonName("Memduh");
+		myMan.sleep();
+		
+		System.out.println();
+		
+		Level myLevel= Level.MEDIUM;
+		switch(myLevel) {
+		case LOW:
+			System.out.println("Low Level");
+			break;
+		case MEDIUM:
+			System.out.println("Medium Level");
+			break;
+		case HIGH:
+			System.out.println("High Level");
+			break;
+		}
+		
+		System.out.println();
+		
+		//Numbers myNumbers= Numbers.One;
+		for(Numbers myNumbers : Numbers.values())
+			System.out.println(myNumbers);
+		
+		System.out.println();
+		
+		Scanner obj= new Scanner(System.in);
+		System.out.println("Enter name, age and salary");
+		
+		//String, integer and double inputs
+		String name= obj.nextLine();
+		int age= obj.nextInt();
+		double salary= obj.nextDouble();
+		
+		System.out.println("Name: "+name+" Age: "+age+" Salary: "+salary);
+		
+		System.out.println();
+		
+		LocalTime date= LocalTime.now();
+		System.out.println(date);
+		
+		System.out.println();
+		
+		LocalDateTime myDateObj= LocalDateTime.now();
+		System.out.println("Before formatting: "+myDateObj);
+		
+		DateTimeFormatter myFormatObj= DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+		
+		String formattedDate= myDateObj.format(myFormatObj);
+		System.out.println("After formatting: "+formattedDate);
+		
+		System.out.println();
+		
+		
 	}
-
 }
