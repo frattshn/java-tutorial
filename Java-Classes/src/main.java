@@ -1,5 +1,13 @@
 import java.util.Scanner;
 
+import java.util.ArrayList;
+
+import java.util.Collections; //sort method
+
+import java.util.HashMap;
+
+import java.util.Iterator;
+
 import myPack.Student;
 
 import extendedClasses.*;
@@ -196,6 +204,99 @@ public class main {
 		System.out.println("After formatting: "+formattedDate);
 		
 		System.out.println();
+		
+		//ArrayList(String)
+		
+		ArrayList<String> cars = new ArrayList<String>();
+		cars.add("Volvo");
+		cars.add("BMW");
+		cars.add("Ford");
+		System.out.println(cars);
+		System.out.println(cars.get(0));
+		cars.set(0, "Ferrari");
+		System.out.println(cars.get(0));
+		cars.remove(0);
+		//Remove all the elements in the car list.
+		//cars.clear();
+		for(int i=0; i<cars.size(); i++)
+			System.out.println(cars.get(i));
+		System.out.println();
+		for(String i:cars)
+			System.out.println(i);
+		
+		Collections.sort(cars);
+		for(String i:cars)
+			System.out.println(i);
+		
+		//ArrayList(Integer)
+		
+		ArrayList<Integer> numbers= new ArrayList<Integer>();
+		numbers.add(5);
+		numbers.add(5);
+		numbers.add(8);
+		for(int i:numbers)
+			System.out.println(i);
+		
+		ArrayList<Integer> numbers2= new ArrayList<Integer>();
+		numbers2.add(58);
+		numbers2.add(55);
+		numbers2.add(34);
+		System.out.println(numbers2);
+		Collections.sort(numbers2);
+		System.out.println(numbers2);
+		
+		HashMap<String, String> capitalCities= new HashMap<String, String>();
+		capitalCities.put("Turkey", "Ankara");
+		capitalCities.put("Germany", "Berlin");
+		System.out.println(capitalCities);
+		System.out.println(capitalCities.get("Turkey"));
+		
+		//Print keys
+		for(String i: capitalCities.keySet())
+			System.out.println(i);
+		
+		//Print values
+		for(String i: capitalCities.values())
+			System.out.println(i);
+		
+		//Print keys and values
+		for(String i: capitalCities.keySet())
+			System.out.println("key: "+i+" value: "+capitalCities.get(i));
+		
+		System.out.println();
+		
+		//Iterator
+		ArrayList<Double> doubles= new ArrayList<Double>();
+		doubles.add(2.25);
+		doubles.add(2.0);
+		doubles.add(5.58);
+		doubles.add(3.4);
+		doubles.add(58.5);
+		
+		//Get the iterator
+		Iterator<Double> it= doubles.iterator();
+		//Print the first item
+		System.out.println(it.next());
+		
+		while(it.hasNext())
+			System.out.println(it.next());
+		
+		System.out.println();
+		
+		//Removing Items from a Collection
+		ArrayList<Double> doubless= new ArrayList<Double>();
+		doubless.add(2.25);
+		doubless.add(20.0);
+		doubless.add(13.58);
+		doubless.add(9.4);
+		doubless.add(58.5);
+		Iterator<Double> it2= doubless.iterator();
+		while(it2.hasNext()) {
+			double i= it2.next();//ilk eleman ve sonralarý
+			if(i<10)
+				it2.remove();
+		}
+		System.out.println(doubless);
 		
 		
 	}
